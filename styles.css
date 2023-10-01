@@ -138,6 +138,8 @@ header{
 .search-results p{
     font-family: Helvetica, sans-serif;
     font-size: 2rem;
+    color: white;
+    padding-left: 5px;
 }
 
 .main-deck-title{
@@ -175,7 +177,7 @@ header{
     color: white;
     font-size: 2rem;
     display: flex;
-    margin-left: 45px;
+    margin-left: 40px;
     margin-top: -40px;
     font-family: Helvetica, sans-serif;
 }
