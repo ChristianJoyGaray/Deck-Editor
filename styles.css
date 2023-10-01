@@ -64,7 +64,7 @@ header{
     max-height: 84vh; 
     padding: -20px;
     background-color: transparent;
-    border: 1px solid #777777;
+    border-left: 1px solid #777777;
 }
 
 .right {
@@ -131,7 +131,6 @@ header{
     width:270px;
     margin-left: -21px;
     height: 701px;  /*753px;*/
-    border: 1px solid #777777;
 }
 
 .search-results p{
