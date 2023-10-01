@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embedded Finals</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="nav-bar">
+           <h1 class="title">Deck Editor</h1>
+        </nav>
+        <aside>
+        </aside>
+    </header>
+    <main>
+        <div class="container">
+            <div class="left-container">
+                <div class="left">
+                    <h2 class="card-name-left" id="left-card-name">Card Name</h2>
+                    <div class="card-picture" id="left-card-picture">
+                        <img src="" alt="Card Image" id="left-card-image">
+                      </div>
+                    <p class="card-description" id="left-card-description">Lorem ipsum.</p>
+                </div>
+            </div>
+            <div class="middle">
+                <h1 class="main-deck-title">Main Deck</h1>
+                <div class="main-deck"> </div>
+            </div>
+            <div class="right-container">
+                <div class="right">
+                    <input class="card-name-right" type="search" name="search" placeholder="Enter Card Name...">
+                    <div class="search-results">
+                        <div class="search-result" data-card='{"name": "Card Name", "image": "card1.jpg", "description": "Description"}' draggable="true">
+                            <img src="card1.jpg" alt="Card Name">
+                            <p>Card Name</p>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        </div>
+    </main>
+    <script>
+        // Get references to the elements
+        const leftCardName = document.getElementById('left-card-name');
+        const leftCardPicture = document.getElementById('left-card-picture');
+        const leftCardDescription = document.getElementById('left-card-description');
+        const searchInput = document.querySelector('.card-name-right');
+        const searchResults = document.querySelector('.search-results');
+        const mainDeck = document.querySelector('.main-deck');
+        
+        // Sample data for demonstration (replace with your actual data)
+        const cardData = [
+            {
+                name: 'Black Luster Soldier',
+                image: 'images/BlackLusterSoldier.png',
+                description: 'The strongest warrior, it has the same capabilities as Blue-Eyes White Dragon.',
+            },
+            {
+                name: 'Blue-Eyes White Dragon',
+                image: 'images/BlueEyesWhiteDragon.png',
+                description: 'This legendary dragon is a powerful engine of destruction. Virtually invincible, very few have faced this awesome creature and lived to tell the tale.',
+            },
+            {
+                name: 'Rabidragon',
+                image: 'images/Rabidragon.png',
+                description: 'Its a snowfield-dwelling, giant-ear-sporting, super-acoustic, snowball-shaped mutant dragon! Theres no way anybody can escape.',
+            },
+            {
+                name: 'Gogiga Gagagigo',
+                image: 'images/GogigaGagagigo.png',
+                description: 'His soul long-since collapsed, his body recklessly continues onward, driven by a lust for more power. He no longer resembles his former self....',
+            },
+            {
+                name: 'Spiral Serpent',
+                image: 'images/SpiralSerpent.png',
+                description: 'When huge whirlpools lay cities asunder, it is the hunger of this sea serpent at work. No one has ever escaped its dreaded Spiral Wave to accurately describe the terror they experienced.',
+            },
+            // Add more card data as needed
+        ];
+
+        // Function to update the left container with card information
+        function updateLeftContainer(card) {
+            leftCardName.textContent = card.name;
+            leftCardPicture.style.backgroundImage = `url(${card.image})`;
+            leftCardDescription.textContent = card.description;
+        }
+
+        // Function to search for cards and display results
+        function searchCards(query) {
+            // Clear previous search results
+            searchResults.innerHTML = '';
+
+            // Filter cards based on the query (replace with your own search logic)
+            const filteredCards = cardData.filter((card) =>
+                card.name.toLowerCase().includes(query.toLowerCase())
+            );
+
+            // If no results were found, display a message
+            if (filteredCards.length === 0) {
+                searchResults.innerHTML = '<p>No results found.</p>';
+                return;
+            }
+
+            // Generate HTML for search results
+            const resultsHTML = filteredCards.map(
+                (card) =>
+                `<div class="search-result" data-card='${JSON.stringify(card)}' draggable="true">
+                    <img src="${card.image}" alt="${card.name}">
+                    <p>${card.name}</p>
+                </div>`
+            );
+
+            // Display search results
+            searchResults.innerHTML = resultsHTML.join('');
+
+            // Add click event listeners to search results
+            const resultElements = document.querySelectorAll('.search-result');
+            resultElements.forEach((element) => {
+                element.addEventListener('click', () => {
+                    const card = JSON.parse(element.getAttribute('data-card'));
+                    updateLeftContainer(card);
+                });
+            });
+
+            // Add dragstart event listeners to search results
+            resultElements.forEach((element) => {
+                element.addEventListener('dragstart', (event) => {
+                    const cardData = JSON.stringify(JSON.parse(element.getAttribute('data-card')));
+                    event.dataTransfer.setData('text/plain', cardData);
+                });
+            });
+        }
+
+        // Add an input event listener to the search input
+        searchInput.addEventListener('input', (event) => {
+            const query = event.target.value;
+            searchCards(query);
+        });
+
+        // Initial display of cards (you can remove this if not needed)
+        searchCards('');
+
+        // Add an event listener to the main deck for the dragover event
+        mainDeck.addEventListener('dragover', (event) => {
+            event.preventDefault();
+        });
+
+        // Function to handle card drop
+        // Function to handle card drop
+function handleCardDrop(event) {
+  event.preventDefault();
+
+  // Get the card data from the dropped element
+  const cardData = JSON.parse(event.dataTransfer.getData('text/plain'));
+
+  // Create a new card element for the main deck
+  const mainDeckCard = document.createElement('div');
+  mainDeckCard.classList.add('main-deck-card');
+
+  // Create an <img> element for the card image
+  const cardImage = document.createElement('img');
+  cardImage.src = cardData.image;
+  cardImage.alt = cardData.name;
+
+  // Apply object-fit: cover to the card image
+  cardImage.style.objectFit = 'cover';
+
+  // Add the card image to the main deck card
+  mainDeckCard.appendChild(cardImage);
+
+  // Add the card to the main deck
+  mainDeck.appendChild(mainDeckCard);
+
+  // Add a click event listener to remove the card from the main deck
+  mainDeckCard.addEventListener('click', () => {
+    mainDeck.removeChild(mainDeckCard);
+  });
+}
+        // Add an event listener to the main deck for the drop event
+        mainDeck.addEventListener('drop', handleCardDrop);
+
+        function updateLeftContainer(card) {
+  leftCardName.textContent = card.name;
+  const leftCardImage = document.getElementById('left-card-image');
+  leftCardImage.src = card.image; // Set the src attribute of the img tag
+  leftCardDescription.textContent = card.description;
+}
+    </script>
+</body>
+</html>
