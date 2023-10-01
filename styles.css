@@ -38,8 +38,7 @@ header{
 }
 
 .left-container {
-    overflow-y: scroll; 
-    max-height: 84vh;
+    border-right: 1px solid #777777;
     padding: -20px;
     background-color: transparent;
     background: hsla(0, 0%, 100%, 0.008); 
@@ -119,7 +118,7 @@ header{
 
 .card-description{
     padding: 8px 0px 0px 8px;
-    height:400px;
+    height:200px;
     width: 270px;
     font-family: Helvetica, sans-serif;
     font-size: 1.5rem;
