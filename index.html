@@ -11,8 +11,6 @@
         <nav class="nav-bar">
            <h1 class="title">Deck Editor</h1>
         </nav>
-        <aside>
-        </aside>
     </header>
     <main>
         <div class="container">
@@ -66,7 +64,7 @@
             {
                 name: 'Rabidragon',
                 image: 'images/Rabidragon.png',
-                description: 'Its a snowfield-dwelling, giant-ear-sporting, super-acoustic, snowball-shaped mutant dragon! Theres no way anybody can escape.',
+                description: 'It is a snowfield-dwelling, giant-ear-sporting, super-acoustic, snowball-shaped mutant dragon! There is no way anybody can escape.',
             },
             {
                 name: 'Gogiga Gagagigo',
@@ -150,44 +148,44 @@
 
         // Function to handle card drop
         // Function to handle card drop
-function handleCardDrop(event) {
-  event.preventDefault();
+        function handleCardDrop(event) {
+        event.preventDefault();
 
-  // Get the card data from the dropped element
-  const cardData = JSON.parse(event.dataTransfer.getData('text/plain'));
+        // Get the card data from the dropped element
+        const cardData = JSON.parse(event.dataTransfer.getData('text/plain'));
 
-  // Create a new card element for the main deck
-  const mainDeckCard = document.createElement('div');
-  mainDeckCard.classList.add('main-deck-card');
+        // Create a new card element for the main deck
+        const mainDeckCard = document.createElement('div');
+        mainDeckCard.classList.add('main-deck-card');
 
-  // Create an <img> element for the card image
-  const cardImage = document.createElement('img');
-  cardImage.src = cardData.image;
-  cardImage.alt = cardData.name;
+        // Create an <img> element for the card image
+        const cardImage = document.createElement('img');
+        cardImage.src = cardData.image;
+        cardImage.alt = cardData.name;
 
-  // Apply object-fit: cover to the card image
-  cardImage.style.objectFit = 'cover';
+        // Apply object-fit: cover to the card image
+        cardImage.style.objectFit = 'cover';
 
-  // Add the card image to the main deck card
-  mainDeckCard.appendChild(cardImage);
+        // Add the card image to the main deck card
+        mainDeckCard.appendChild(cardImage);
 
-  // Add the card to the main deck
-  mainDeck.appendChild(mainDeckCard);
+        // Add the card to the main deck
+        mainDeck.appendChild(mainDeckCard);
 
-  // Add a click event listener to remove the card from the main deck
-  mainDeckCard.addEventListener('click', () => {
-    mainDeck.removeChild(mainDeckCard);
-  });
-}
-        // Add an event listener to the main deck for the drop event
-        mainDeck.addEventListener('drop', handleCardDrop);
+        // Add a click event listener to remove the card from the main deck
+        mainDeckCard.addEventListener('click', () => {
+            mainDeck.removeChild(mainDeckCard);
+        });
+        }
+                // Add an event listener to the main deck for the drop event
+                mainDeck.addEventListener('drop', handleCardDrop);
 
-        function updateLeftContainer(card) {
-  leftCardName.textContent = card.name;
-  const leftCardImage = document.getElementById('left-card-image');
-  leftCardImage.src = card.image; // Set the src attribute of the img tag
-  leftCardDescription.textContent = card.description;
-}
+                function updateLeftContainer(card) {
+        leftCardName.textContent = card.name;
+        const leftCardImage = document.getElementById('left-card-image');
+        leftCardImage.src = card.image; // Set the src attribute of the img tag
+        leftCardDescription.textContent = card.description;
+        }
     </script>
 </body>
 </html>
