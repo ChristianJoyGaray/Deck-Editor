@@ -171,6 +171,10 @@ header{
     border: 1px solid #777777;
 }
 
+.search-result:hover{
+    cursor: pointer;
+}
+
 .search-result p{
     color: white;
     font-size: 2rem;
@@ -202,7 +206,8 @@ header{
 }
 
 .main-deck-card:hover{
-    border:1px dashed white;
+    border:2px dashed white;
+    cursor:pointer;
 }
 
 
