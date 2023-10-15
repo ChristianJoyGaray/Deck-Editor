@@ -23,9 +23,19 @@
                     <p class="card-description" id="left-card-description">Card description</p>
                 </div>
             </div>
-            <div class="middle">
-                <h1 class="main-deck-title">Main Deck</h1>
-                <div class="main-deck"> </div>
+            <div class="decks">
+                <div class="middle">
+                    <h1 class="main-deck-title">Main Deck</h1>
+                    <div class="main-deck"> </div>
+                </div>
+                <div class="extra">
+                    <h1 class="extra-deck-title">Extra Deck</h1>
+                    <div class="extra-deck"> </div>
+                </div>
+                <div class="side">
+                    <h1 class="side-deck-title">Side Deck</h1>
+                    <div class="side-deck"> </div>
+                </div>
             </div>
             <div class="right-container">
                 <div class="right">
@@ -55,32 +65,43 @@
                 name: 'Black Luster Soldier',
                 image: 'images/BlackLusterSoldier.png',
                 description: 'The strongest warrior, it has the same capabilities as Blue-Eyes White Dragon.',
+                category: 'monster',
             },
             {
                 name: 'Blue-Eyes White Dragon',
                 image: 'images/BlueEyesWhiteDragon.png',
                 description: 'This legendary dragon is a powerful engine of destruction. Virtually invincible, very few have faced this awesome creature and lived to tell the tale.',
+                category: 'spell',
             },
             {
                 name: 'Rabidragon',
                 image: 'images/Rabidragon.png',
                 description: 'It is a snowfield-dwelling, giant-ear-sporting, super-acoustic, snowball-shaped mutant dragon! There is no way anybody can escape.',
+                category: 'spell',
             },
             {
                 name: 'Gogiga Gagagigo',
                 image: 'images/GogigaGagagigo.png',
                 description: 'His soul long-since collapsed, his body recklessly continues onward, driven by a lust for more power. He no longer resembles his former self....',
+                category: 'trap',
             },
             {
                 name: 'Spiral Serpent',
                 image: 'images/SpiralSerpent.png',
                 description: 'When huge whirlpools lay cities asunder, it is the hunger of this sea serpent at work. No one has ever escaped its dreaded Spiral Wave to accurately describe the terror they experienced.',
+                category: 'monster',
             },
             // Add more card data as needed
         ];
 
         // Function to update the left container with card information
         function updateLeftContainer(card) {
+            leftCardName.textContent = card.name;
+            leftCardPicture.style.backgroundImage = `url(${card.image})`;
+            leftCardDescription.textContent = card.description;
+        }
+
+        function updateLeftContainer(category) {
             leftCardName.textContent = card.name;
             leftCardPicture.style.backgroundImage = `url(${card.image})`;
             leftCardDescription.textContent = card.description;
@@ -114,6 +135,7 @@
             // Display search results
             searchResults.innerHTML = resultsHTML.join('');
 
+            
             // Add click event listeners to search results
             const resultElements = document.querySelectorAll('.search-result');
             resultElements.forEach((element) => {
