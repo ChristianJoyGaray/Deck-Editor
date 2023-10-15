@@ -60,11 +60,11 @@ header{
 }
 
 .right-container {
-    overflow-y: scroll; 
     max-height: 84vh; 
     padding: -20px;
     background-color: transparent;
     border-left: 1px solid #777777;
+    overflow-y: scroll; 
 }
 
 .right {
@@ -141,7 +141,7 @@ header{
 }
 
 .main-deck-title{
-    margin-top: -10px;
+    margin-top: -13px;
     width:440px;
     height: 45px;
     border-radius: 10px;
@@ -212,7 +212,7 @@ header{
 }
 
 .extra-deck-title{
-    margin-top: -10px;
+    margin-top: 8px;
     width:440px;
     height: 45px;
     border-radius: 10px;
@@ -238,7 +238,7 @@ header{
 }
 
 .side-deck-title{
-    margin-top: 10px;
+    margin-top: 8px;
     width:440px;
     height: 45px;
     border-radius: 10px;
