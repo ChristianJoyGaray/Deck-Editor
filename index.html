@@ -75,7 +75,7 @@
         
         // Sample data for demonstration (replace with your actual data)
         const cardData = [
-            {
+        {
                 name: 'Black Luster Soldier',
                 image: 'images/BlackLusterSoldier.png',
                 description: 'The strongest warrior, it has the same capabilities as Blue-Eyes White Dragon.',
@@ -85,7 +85,7 @@
                 name: 'Blue-Eyes White Dragon',
                 image: 'images/BlueEyesWhiteDragon.png',
                 description: 'This legendary dragon is a powerful engine of destruction. Virtually invincible, very few have faced this awesome creature and lived to tell the tale.',
-                type: 'Spell',
+                type: 'Monster',
             },
             {
                 name: 'Rabidragon',
@@ -104,6 +104,192 @@
                 image: 'images/SpiralSerpent.png',
                 description: 'When huge whirlpools lay cities asunder, it is the hunger of this sea serpent at work. No one has ever escaped its dreaded Spiral Wave to accurately describe the terror they experienced.',
                 type: 'Monster',
+            },
+            {
+                name: 'Summoned Skull',
+                image: 'https://i.ebayimg.com/images/g/YUIAAOSwd5xcb6qW/s-l1200.jpg',
+                description: 'A fiend with dark powers for confusing the enemy. Among the Fiend-Type monsters, this monster boasts considerable force.',
+                type: "Monster",
+            },
+            {
+                name: 'Slifer the Sky Dragon',
+                image: 'https://yugipedia.com/thumb.php?f=SlifertheSkyDragon-MVP1-EN-UR-LE.png&w=300',
+                description: 'Requires 3 Tributes to Normal Summon (cannot be Normal Set). This cards Normal Summon cannot be negated. When Normal Summoned, cards and effects cannot be activated. Once per turn, during the End Phase, if this card was Special Summoned: Send it to the GY...',
+                type: "Monster",
+            },
+            {
+                name: 'Thousand Knives',
+                image: 'https://ms.yugipedia.com//thumb/b/bc/ThousandKnives-SBC1-EN-C-1E.png/300px-ThousandKnives-SBC1-EN-C-1E.png',
+                description: 'If you control "Dark Magician": Target 1 monster your opponent controls; destroy that target.',
+                type: "Spell",
+            },
+            {
+                name: 'Elemental HERO Neos',
+                image: 'https://yugipedia.com/thumb.php?f=ElementalHERONeos-DUPO-EN-UR-LE.png&w=300',
+                description: 'A new Elemental HERO has arrived from Neo-Space! When he initiates a Contact Fusion with a Neo-Spacian his unknown powers are unleashed.',
+                type: "Monster",
+            },
+            {
+                name: 'Elemental HERO Flame Wingman',
+                image: 'https://ms.yugipedia.com//thumb/e/ee/ElementalHEROFlameWingman-SGX1-EN-C-1E.png/300px-ElementalHEROFlameWingman-SGX1-EN-C-1E.png',
+                description: '"Elemental HERO Avian" + "Elemental HERO Burstinatrix"      Must be Fusion Summoned. When this card destroys a monster by battle and sends it to the GY: Inflict damage to your opponent equal to the ATK of the destroyed monster in the GY.',
+                type: "Fusion",
+            },
+            {
+                name: 'Gaia The Fierce Knight',
+                image: 'https://yugipedia.com/thumb.php?f=GaiaTheFierceKnight-MIL1-EN-R-1E.png&w=300',
+                description: 'A knight whose horse travels faster than the wind. His battle-charge is a force to be reckoned with.',
+                type: "Monster",
+            },
+            {
+                name: 'Kuriboh',
+                image: 'https://yugipedia.com/thumb.php?f=Kuriboh-BROL-EN-UR-1E.png&w=300',
+                description: 'During damage calculation, if your opponents monster attacks (Quick Effect): You can discard this card; you take no battle damage from that battle.',
+                type: "Monster",
+            },
+            {
+                name: 'Elemental HERO Shining Flare Wingman',
+                image: 'https://ms.yugipedia.com//thumb/9/9b/ElementalHEROShiningFlareWingman-SGX3-EN-C-1E.png/300px-ElementalHEROShiningFlareWingman-SGX3-EN-C-1E.png',
+                description: '"Elemental HERO Flame Wingman" + "Elemental HERO Sparkman" Must be Fusion Summoned. Gains 300 ATK for each "Elemental HERO" card in your GY. If this card destroys a monster by battle and sends it to the GY: Inflict damage to your opponent equal to that monsters original ATK in the GY.',
+                type: "Fusion",
+            },
+            {
+                name: 'Monster Reborn',
+                image: 'https://ms.yugipedia.com//thumb/f/fb/MonsterReborn-LOB-EN-UR-UE-25thAnniversaryEdition.png/300px-MonsterReborn-LOB-EN-UR-UE-25thAnniversaryEdition.png',
+                description: 'Target 1 monster in either GY; Special Summon it.',
+                type: "Spell",
+            },
+            {
+                name: 'Mirror Force',
+                image: 'https://ms.yugipedia.com//thumb/e/e4/MirrorForce-MRD-EN-UR-UE-25thAnniversaryEdition.png/300px-MirrorForce-MRD-EN-UR-UE-25thAnniversaryEdition.png',
+                description: 'When an opponents monster declares an attack: Destroy all your opponents Attack Position monsters.',
+                type: "Trap",
+            },
+            {
+                name: 'Card of Sanctity',
+                image: 'https://ms.yugipedia.com//thumb/4/43/CardofSanctity-YGLD-EN-C-1E.png/300px-CardofSanctity-YGLD-EN-C-1E.png',
+                description: 'Banish all other cards you control and in your hand (min.1 from each); draw until you have 2 cards in your hand.',
+                type: "Spell",
+            },
+            {
+                name: 'Pot of Greed',
+                image: 'https://ms.yugipedia.com//thumb/5/50/PotofGreed-LOB-EN-R-UE-25thAnniversaryEdition.png/300px-PotofGreed-LOB-EN-R-UE-25thAnniversaryEdition.png',
+                description: 'Draw 2 cards.',
+                type: "Spell",
+            },
+            {
+                name: 'Change of Heart',
+                image: 'https://ms.yugipedia.com//thumb/0/06/ChangeofHeart-MRD-EN-UR-UE-25thAnniversaryEdition.png/300px-ChangeofHeart-MRD-EN-UR-UE-25thAnniversaryEdition.png',
+                description: 'Target 1 monster your opponent controls; take control of it until the End Phase.',
+                type: "Spell",
+            },
+            {
+                name: 'Swords of Revealing Light',
+                image: 'https://ms.yugipedia.com//thumb/4/47/SwordsofRevealingLight-LOB-EN-SR-UE-25thAnniversaryEdition.png/300px-SwordsofRevealingLight-LOB-EN-SR-UE-25thAnniversaryEdition.png',
+                description: 'After this cards activation, it remains on the field, but you must destroy it during the End Phase of your opponents 3rd turn. When this card is activated: If your opponent controls a face-down monster, flip all monsters they control face-up. While this card is face-up on the field, your opponents...',
+                type: "Spell",
+            },
+            {
+                name: 'De-Fusion',
+                image: 'https://ms.yugipedia.com//thumb/1/1e/DeFusion-STP4-EN-SR-UE.png/300px-DeFusion-STP4-EN-SR-UE.png',
+                description: 'Target 1 Fusion Monster on the field; return that target to the Extra Deck, then, if all the materials that were used for its Fusion Summon are in your GY, you can Special Summon all of them.',
+                type: "Spell",
+            },
+            {
+                name: 'Obelisk the Tormentor',
+                image: 'https://yugipedia.com/thumb.php?f=ObelisktheTormentor-MVP1-EN-UR-LE.png&w=300',
+                description: 'Requires 3 Tributes to Normal Summon (cannot be Normal Set). This cards Normal Summon cannot be negated. When Normal Summoned, cards and effects cannot be activated. Neither player can target this card with card effects. Once per turn, during the End Phase, if this card was Special... ',
+                type: "Monster",
+            },
+            {
+                name: 'The Winged Dragon of Ra',
+                image: 'https://yugipedia.com/thumb.php?f=TheWingedDragonofRa-LED7-EN-UR-1E.png&w=300',
+                description: 'Cannot be Special Summoned. Requires 3 Tributes to Normal Summon (cannot be Normal Set). This cards Normal Summon cannot be negated. When Normal Summoned, other cards and effects cannot be activated. When this card is Normal Summoned: You can pay LP so... ',
+                type: "Monster",
+            },
+            {
+                name: 'Millennium Shield',
+                image: 'https://m.media-amazon.com/images/I/71OKRyUQ3WL._AC_UF894,1000_QL80_.jpg',
+                description: 'A famous shield said to belong to an ancient Egyptian Pharaoh. Legends tell of its power to block any strong attack.',
+                type: "Monster",
+            },
+            {
+                name: 'Magic Cylinder',
+                image: 'https://ms.yugipedia.com//thumb/2/2d/MagicCylinder-SDRR-EN-C-1E.png/300px-MagicCylinder-SDRR-EN-C-1E.png',
+                description: 'When an opponents monster declares an attack: Target the attacking monster; negate the attack, and if you do, inflict damage to your opponent equal to its ATK.',
+                type: "Trap",
+            },
+            {
+                name: 'Dark Spiral Force',
+                image: 'https://yugipedia.com/thumb.php?f=DarkSpiralForce-EN-Anime-MOV2.png&w=200',
+                description: 'Select 1 monster you control. Its ATK is doubled. "Dark Magician" cannot attack the turn you activate this card.',
+                type: "Trap",
+            },
+            {
+                name: 'Neos Spiral Force',
+                image: 'https://ms.yugipedia.com//5/5e/NeosSpiralForce-EN-Anime-MOV2.png',
+                description: 'Double the ATK of 1 monster you control. This turn, "Elemental Hero Neos" you control cannot attack.',
+                type: "Trap",
+            },
+            {
+                name: 'Mirror Wall',
+                image: 'https://ms.yugipedia.com//thumb/f/fd/MirrorWall-PSV-EN-SR-UE-25thAnniversaryEdition.png/300px-MirrorWall-PSV-EN-SR-UE-25thAnniversaryEdition.png',
+                description: 'Halve the ATK of your opponents attacking monsters. Once per turn, during your Standby Phase, pay 2000 LP or destroy this card.',
+                type: "Trap",
+            },
+            {
+                name: 'Soul Exchange',
+                image: 'https://ms.yugipedia.com//thumb/5/5a/SoulExchange-SGX3-EN-C-1E.png/300px-SoulExchange-SGX3-EN-C-1E.png',
+                description: 'Target 1 monster your opponent controls; this turn, if you Tribute a monster, you must Tribute that target, as if you controlled it. You cannot conduct your Battle Phase the turn you activate this card.',
+                type: "Spell",
+            },
+            {
+                name: 'Dark Magic Curtain',
+                image: 'https://ms.yugipedia.com//thumb/b/b0/DarkMagicCurtain-SBC1-EN-C-1E.png/300px-DarkMagicCurtain-SBC1-EN-C-1E.png',
+                description: 'Pay half your LP; Special Summon 1 "Dark Magician" from your Deck. You cannot Summon other monsters the turn you activate this card (but you can Normal Set).',
+                type: "Spell",
+            },
+            {
+                name: 'Blue-Eyes Ultimate Dragon',
+                image: 'https://yugipedia.com/thumb.php?f=BlueEyesUltimateDragon-MSC1-JP-C.png&w=300',
+                description: '"Blue-Eyes White Dragon" + "Blue-Eyes White Dragon" + "Blue-Eyes White Dragon"',
+                type: "Fusion",
+            },
+            {
+                name: 'Red-Eyes Black Dragon',
+                image: 'https://yugipedia.com/thumb.php?f=RedEyesBlackDragon-MP22-EN-PScR-1E.png&w=300',
+                description: 'A ferocious dragon with a deadly attack.',
+                type: "Monster",
+            },
+            {
+                name: 'Exchange',
+                image: 'https://ms.yugipedia.com//thumb/2/26/Exchange-SBC1-EN-C-1E.png/300px-Exchange-SBC1-EN-C-1E.png',
+                description: 'Both players reveal their hands and add 1 card from each others hand to their hand.',
+                type: "Spell",
+            },
+            {
+                name: 'Polymerization',
+                image: 'https://ms.yugipedia.com//thumb/7/73/Polymerization-SBC1-EN-C-1E.png/300px-Polymerization-SBC1-EN-C-1E.png',
+                description: 'Fusion Summon 1 Fusion Monster from your Extra Deck, using monsters from your hand or field as Fusion Material.',
+                type: "Spell",
+            },
+            {
+                name: 'Negate Attack',
+                image: 'https://ms.yugipedia.com//thumb/4/45/NegateAttack-SGX3-EN-C-1E.png/300px-NegateAttack-SGX3-EN-C-1E.png',
+                description: 'When an opponents monster declares an attack: Target the attacking monster; negate the attack, then end the Battle Phase.',
+                type: "Trap",
+            },
+            {
+                name: 'Dark Paladin',
+                image: 'https://yugipedia.com/thumb.php?f=DarkPaladin-MIL1-EN-C-1E.png&w=300',
+                description: '"Dark Magician" + "Buster Blader" When a Spell Card is activated (Quick Effect): You can discard 1 card; negate the activation, and if you do, destroy it. This card must be face-up on the field to activate and to resolve this effect. Gains 500 ATK for each Dragon monster on the field and in the GY.',
+                type: "Fusion",
+            },
+            {
+                name: 'Spellbinding Circle',
+                image: 'https://m.media-amazon.com/images/I/41WNUsttpHL._AC_UF894,1000_QL80_.jpg',
+                description: 'Activate this card by targeting 1 monster your opponent controls; it cannot attack or change its battle position. When that monster is destroyed, destroy this card.',
+                type: "Trap",
             },
             // Add more card data as needed
         ];
