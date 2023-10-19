@@ -161,6 +161,7 @@ header{
 
 .search-result:hover{
     cursor: pointer;
+	background:-webkit-linear-gradient(left, #111925 0%,#777777 50%,#111925 99%,#111925 100%);
 }
 
 .search-result p{

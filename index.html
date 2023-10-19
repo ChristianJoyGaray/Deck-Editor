@@ -230,7 +230,7 @@
   extraDeck.addEventListener('drop', (event) => handleCardDrop(event, extraDeck));
   sideDeck.addEventListener('drop', (event) => handleCardDrop(event, sideDeck));
 
-                function updateLeftContainer(card) {
+        function updateLeftContainer(card) {
         leftCardName.textContent = card.name;
         const leftCardImage = document.getElementById('left-card-image');
         leftCardImage.src = card.image; // Set the src attribute of the img tag
