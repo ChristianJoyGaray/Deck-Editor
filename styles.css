@@ -325,3 +325,27 @@ header{
 ::-webkit-scrollbar-thumb:hover {
     background: #401e77;
 }
+
+@media (max-width: 768px) {
+    .left-container, .right-container {
+        border-left: none; 
+        padding: 20px; 
+        width: 100%; 
+        display: grid;
+        justify-content: center;
+    }
+
+    .container{
+        flex-direction: column;
+    }
+
+    .decks {
+        flex: 1; 
+        padding: 20px; 
+    }
+    
+    .main-deck, .extra-deck, .side-deck {
+        width: 100%; 
+    }
+}
+
