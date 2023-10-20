@@ -60,7 +60,7 @@ header{
 }
 
 .right-container {
-    max-height: 84vh; 
+    height: 84vh; 
     padding: -20px;
     background-color: transparent;
     border-left: 1px solid #777777;
