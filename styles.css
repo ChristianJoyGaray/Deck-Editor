@@ -13,7 +13,6 @@ body{
     margin:0;
     padding:0;
     scroll-behavior: smooth;
-    
 }
 
 header{
@@ -43,14 +42,12 @@ header{
     background-color: transparent;
     background: hsla(0, 0%, 100%, 0.008); 
     backdrop-filter: blur(5px); 
-    
 }
 
 .left {
     width:310px;
     padding: 20px;
     background-color: transparent;
-    
 }
 
 .decks {
