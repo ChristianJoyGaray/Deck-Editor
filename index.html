@@ -62,7 +62,6 @@
         </div>
     </main>
     <script>
-        // Get references to the elements
         const leftCardName = document.getElementById('left-card-name');
         const leftCardPicture = document.getElementById('left-card-picture');
         const leftCardDescription = document.getElementById('left-card-description');
@@ -74,7 +73,7 @@
         const extraDeck = document.querySelector('.extra-deck');
         const sideDeck = document.querySelector('.side-deck');
         
-        // Sample data for demonstration (replace with your actual data)
+        //Database for cards
         const cardData = [
         {
                 name: 'Black Luster Soldier',
@@ -292,7 +291,6 @@
                 description: 'Activate this card by targeting 1 monster your opponent controls; it cannot attack or change its battle position. When that monster is destroyed, destroy this card.',
                 type: "Trap",
             },
-            // Add more card data as needed
         ];
 
         // Function to update the left container with card information
@@ -368,7 +366,7 @@
             searchCards(query);
         });
 
-        // Initial display of cards (you can remove this if not needed)
+        // Initial display of cards
         searchCards('');
 
         function handleCardDrop(event, deck) {
@@ -417,10 +415,11 @@
   extraDeck.addEventListener('drop', (event) => handleCardDrop(event, extraDeck));
   sideDeck.addEventListener('drop', (event) => handleCardDrop(event, sideDeck));
 
+        //function to make the clicked card on right container appear info on left container
         function updateLeftContainer(card) {
         leftCardName.textContent = card.name;
         const leftCardImage = document.getElementById('left-card-image');
-        leftCardImage.src = card.image; // Set the src attribute of the img tag
+        leftCardImage.src = card.image; 
         leftCardType.textContent = card.type;
         leftCardDescription.textContent = card.description;
         }
