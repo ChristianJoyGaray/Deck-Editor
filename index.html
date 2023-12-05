@@ -62,6 +62,7 @@
         </div>
     </main>
     <script>
+        //references
         const leftCardName = document.getElementById('left-card-name');
         const leftCardPicture = document.getElementById('left-card-picture');
         const leftCardDescription = document.getElementById('left-card-description');
@@ -293,38 +294,46 @@
             },
         ];
 
-        // Function to update the left container with card information
+        //function to make the clicked card on right container appear info on left container
         function updateLeftContainer(card) {
             leftCardName.textContent = card.name;
-            leftCardPicture.style.backgroundImage = `url(${card.image})`;
+            const leftCardImage = document.getElementById('left-card-image'); 
+            leftCardImage.src = card.image; 
+            leftCardType.textContent = card.type;
             leftCardDescription.textContent = card.description;
         }
 
-        function updateLeftContainer(category) {
-            leftCardName.textContent = card.name;
-            leftCardPicture.style.backgroundImage = `url(${card.image})`;
-            leftCardDescription.textContent = card.description;
-        }
+        // function updateLeftContainer(card) {
+        //     leftCardName.textContent = card.name;
+        //     leftCardPicture.style.backgroundImage = `url(${card.image})`;
+        //     leftCardDescription.textContent = card.description;
+        // }
 
-        // Function to search for cards and display results
+        // function updateLeftContainer(category) {
+        //     leftCardName.textContent = card.name;
+        //     leftCardPicture.style.backgroundImage = `url(${card.image})`;
+        //     leftCardDescription.textContent = card.description;
+        // }
+
+        // function to search for cards and display results
         function searchCards(query, selectedType) {
-            // Clear previous search results
+            // clear previous search results
             searchResults.innerHTML = '';
 
-            // Filter cards based on the query and selected type
+            // filter cards based on the query and selected type
             const filteredCards = cardData.filter((card) => {
                 const nameMatches = card.name.toLowerCase().includes(query.toLowerCase());
                 const typeMatches = !selectedType || card.type === selectedType; // Filter by type if selected
                 return nameMatches && typeMatches;
             });
 
-            // If no results were found, display a message
+            // if no results were found, display a message
             if (filteredCards.length === 0) {
                 searchResults.innerHTML = '<p>No results found.</p>';
                 return;
             }
 
-            // Generate HTML for search results
+            // generate HTML for search results
             const resultsHTML = filteredCards.map(
                 (card) =>
                 `<div class="search-result" data-card='${JSON.stringify(card)}' draggable="true">
@@ -333,7 +342,7 @@
                 </div>`
             );
 
-            // Display search results
+            // display search results
             searchResults.innerHTML = resultsHTML.join('');
 
             // Add click event listeners to search results
@@ -415,14 +424,8 @@
         extraDeck.addEventListener('drop', (event) => handleCardDrop(event, extraDeck));
         sideDeck.addEventListener('drop', (event) => handleCardDrop(event, sideDeck));
 
-        //function to make the clicked card on right container appear info on left container
-        function updateLeftContainer(card) {
-            leftCardName.textContent = card.name;
-            const leftCardImage = document.getElementById('left-card-image');
-            leftCardImage.src = card.image; 
-            leftCardType.textContent = card.type;
-            leftCardDescription.textContent = card.description;
-        }
+        
+       
     </script>
 </body>
 </html>
